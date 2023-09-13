@@ -38,6 +38,14 @@ Follow these steps to set up and run the project locally:
    DEV_MODE=development
    ```
 
+ **Install redis follow official doc**
+ 
+    
+       sudo service redis-server start
+       redis-cli
+       KEYS *
+    
+
 5. **Start the Server**
 
    - If you don't have nodemon installed:
