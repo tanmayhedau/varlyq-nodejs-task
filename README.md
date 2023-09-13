@@ -1,4 +1,3 @@
-Certainly! Below is a sample `README.md` file for your project:
 
 ---
 
@@ -13,7 +12,7 @@ Follow these steps to set up and run the project locally:
 1. **Clone the Repository**
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/tanmayhedau/varlyq-nodejs-task.git
    ```
 
 2. **Navigate to the Project Directory**
@@ -36,7 +35,7 @@ Follow these steps to set up and run the project locally:
    PORT=3000
    MONGO_URI=mongodb://localhost:27017/your_database
    JWT_SECRET=your_jwt_secret
-   REDIS_URL=redis://localhost:6379
+   DEV_MODE=development
    ```
 
 5. **Start the Server**
@@ -64,7 +63,7 @@ Follow these steps to set up and run the project locally:
 - `PORT`: The port on which the server will run.
 - `MONGO_URI`: MongoDB connection URI.
 - `JWT_SECRET`: Secret key for JWT token generation.
-- `REDIS_URL`: Redis connection URL.
+- `DEV_MODE`: development mode.
 
 ## Contributing
 
@@ -76,4 +75,3 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-Please replace `<repository_url>` with the actual URL of your repository. Also, make sure to update any placeholder values like database URI, JWT secret, and Redis URL with your actual values.
