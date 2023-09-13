@@ -22,5 +22,9 @@ app.use(morgan('dev'));
 app.use('/', userRoutes);
 app.use('/', postRoutes);
 
+app.get('/', (req, res) => {
+  res.send('server is ready...')
+})
+
 
 export default app;
