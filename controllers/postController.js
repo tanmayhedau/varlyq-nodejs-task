@@ -29,7 +29,18 @@ export const createPost = async (req, res) => {
 //get api
 export const getPost = async (req, res) => {
   try {
-    const posts = await PostModel.find({});
+    const posts = await PostModel.find({}).populate({
+      path: 'createdBy',
+      select: 'name email mobile',
+    })
+      .populate({
+        path: 'comments',
+        populate: {
+          path: 'sentBy',
+          select: 'name email mobile',
+        },
+      })
+      .exec();
     if (!posts) {
       return res.status(404).json({ success: false, message: `No posts found` });
     }
@@ -86,11 +97,6 @@ export const createComments = async (req, res) => {
 export const likeAPost = async (req, res) => {
   try {
     const { postId, userId, commentId } = req.params;
-
-    //authorization
-    if (req.userId !== userId) {
-      return res.status(403).json({ success: false, message: "Unauthorized user" });
-    }
 
     //check if post is present
     const post = await PostModel.findById(postId);

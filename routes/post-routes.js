@@ -15,7 +15,7 @@ router.get('/posts', authentication, getPost);
 router.post('/posts/:postId/:sentBy', authentication, createComments);
 
 //like a post
-router.post('/posts/:postId/:userId/:commentId', likeAPost);
+router.post('/posts/:postId/:userId/:commentId', authentication, likeAPost);
 
 //update post
 router.put('/posts/:postId/:userId/', authentication, updatePost);
